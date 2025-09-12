@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta IgnovaTech - B.APP POC</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <!-- ENCABEZADO -->
+    <div class="header">
+        <div class="container">
+            <!-- Logo en extremo izquierdo -->
+            <img src="logo.png" alt="Logo IgnovaTech"
+                 style="position: absolute; top: 20px; left: 20px; height: 120px; width: auto; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.2);">
+
+            <!-- Contenedor centrado para título y subtítulo -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+                <!-- Título centrado -->
+                <h1 style="margin: 0; font-size: 2.2em;"><span class="logo">IgnovaTech</span></h1>
+                <!-- Subtítulo centrado -->
+                <p class="subtitle" style="margin: 0; font-size: 1.3em; opacity: 0.9;">Soluciones Tecnológicas
+                    Innovadoras</p>
+            </div>
+
+            <!-- Botón posicionado absolutamente en la esquina superior derecha -->
+            <button onclick="downloadPDF()"
+                    style="position: absolute; top: 60px; right: 20px; padding: 12px 20px; background: #ff9800; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 10px rgba(255,152,0,0.3); font-size: 14px;">
+                Descargar PDF
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- INFORMACIÓN DE LA EMPRESA -->
+        <div class="company-info">
+            <h2>🏢 Información Corporativa</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>📧 Contacto Principal</h3>
+                    <p><strong>Email:</strong> cajs0718@gmail.com</p>
+                    <p><strong>Teléfono:</strong> +54 11 6267-7682</p>
+                    <p><strong>WhatsApp:</strong> +54 9 11 6267-7682</p>
+                </div>
+                <div class="info-item">
+                    <h3>🌍 Ubicación</h3>
+                    <p><strong>Dirección:</strong> Buenos Aires, Argentina</p>
+                    <p><strong>Zona Horaria:</strong> GMT-3 (ART)</p>
+                    <p><strong>Modalidad:</strong> 100% Remoto</p>
+                </div>
+                <div class="info-item">
+                    <h3>🛠️ Especialidades</h3>
+                    <p>• Desarrollo de Aplicaciones Web y Mobile</p>
+                    <p>• Integración de IA y Automatización</p>
+                    <p>• Consultoría en Startups, POCs, etc.</p>
+                </div>
+                <div class="info-item">
+                    <h3>👥 Equipo</h3>
+                    <p><strong>Tamaño:</strong> 2 Desarrolladores Senior</p>
+                    <p><strong>Experiencia:</strong> 5+ años en Web Dev y Data Science</p>
+                    <p><strong>Stack:</strong> Full-Stack + IA</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NUEVA PÁGINA: PLAN TÉCNICO -->
+        <div class="page-break">
+            <div class="section">
+                <div class="plan-tecnico">
+                    <h2>🎯 Plan Técnico del Proyecto B.APP</h2>
+
+                    <div class="highlight-box">
+                        <h3>📋 Resumen del Proyecto</h3>
+                        <p><strong>Cliente:</strong> Claudia - B.APP</p>
+                        <p><strong>Tipo:</strong> Prueba de Concepto (POC) Funcional</p>
+                        <p><strong>Objetivo:</strong> Validar la viabilidad técnica y funcional de una aplicación de
+                            marketing inteligente para emprendedores</p>
+                        <p><strong>Timeline:</strong> 3 meses (90 días laborables)</p>
+                    </div>
+                </div>
+                <div class="arquitectura-tecnica">
+                    <h3>🏗️ Arquitectura Técnica Propuesta</h3>
+
+                    <div class="tech-stack">
+                        <h4>Stack Tecnológico Principal</h4>
+                        <div class="tech-list">
+                            <div class="tech-item">Next.js + TypeScript</div>
+                            <div class="tech-item">Node.js + Express</div>
+                            <div class="tech-item">MongoDB Atlas</div>
+                            <div class="tech-item">OpenAI API (GPT-4)</div>
+                            <div class="tech-item">Socket.io (Chat tiempo real)</div>
+                            <div class="tech-item">JWT Authentication</div>
+                            <div class="tech-item">Tailwind CSS</div>
+                            <div class="tech-item">Shadcn UI</div>
+                            <div class="tech-item warning">n8n (Automatización) *</div>
+                        </div>
+                        <p class="alert-note"><strong>*</strong> A definir con cliente según necesidades específicas</p>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Integraciones Externas</h4>
+                        <div class="tech-list">
+                            <div class="tech-item">Trello API</div>
+                            <div class="tech-item warning">Otras integraciones *</div>
+                        </div>
+                        <p class="alert-note"><strong>*</strong> A definir con cliente según herramientas que utilice
+                        </p>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Infraestructura</h4>
+
+                        <div style="margin: 25px 0;">
+                            <h5 style="color: #28a745; font-weight: 600; margin-bottom: 25px;">🆓 Capa Free (POC Base)
+                            </h5>
+                            <div class="tech-list" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                                <div class="tech-item" style="background: #d4edda; border-color: #c3e6cb;">Vercel
+                                    (Deploy
+                                    gratuito)</div>
+                                <div class="tech-item" style="background: #d4edda; border-color: #c3e6cb;">MongoDB Atlas
+                                    (Tier gratuito)</div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 15px 0;">
+                            <h5 style="color: #dc3545; font-weight: 600; margin-bottom: 25px;">💰 Capa No Free
+                                (Producción -
+                                Cuando escale)</h5>
+                            <div class="tech-list" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                                <div class="tech-item" style="background: #f8d7da; border-color: #f5c6cb;">Hostinger /
+                                    AWS
+                                    (Hosting dedicado)</div>
+                                <div class="tech-item" style="background: #f8d7da; border-color: #f5c6cb;">SSL + Dominio
+                                    personalizado</div>
+                                <div class="tech-item" style="background: #f8d7da; border-color: #f5c6cb;">MongoDB Atlas
+                                    (Plan pagado)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nuestra-perspectiva">
+                    <h3>🎯 Nuestra Perspectiva sobre esta POC</h3>
+
+                    <div class="key-point">
+                        <h4>🔥 ¿Por qué este proyecto nos interesa enormemente?</h4>
+                        <ul>
+                            <li><strong>Innovación en IA aplicada:</strong> Combinar conversational AI con
+                                automatización de
+                                marketing es un campo en crecimiento exponencial</li>
+                            <li><strong>Complejidad técnica desafiante:</strong> Integrar múltiples APIs, chat en tiempo
+                                real, y workflows automatizados representa un desafío técnico estimulante</li>
+                            <li><strong>Potencial de escalabilidad:</strong> La arquitectura que desarrollemos puede
+                                escalar
+                                a miles de usuarios y múltiples mercados</li>
+                            <li><strong>Aprendizaje mutuo:</strong> Trabajar con emprendedores nos permite entender
+                                mejor
+                                las necesidades reales del mercado</li>
+                            <li><strong>Portfolio de impacto:</strong> Este tipo de proyecto demuestra nuestra capacidad
+                                de
+                                crear soluciones reales de negocio, no solo código</li>
+                            <li><strong>Sinergia humana:</strong> La actitud, las ganas, el temple y la visión que
+                                percibimos en Claudia hacen que este proyecto trascienda el código. Será un verdadero
+                                intercambio de sinergia, experiencias y visión futurista que enriquecerá a ambas partes
+                                y
+                                potenciará el resultado final</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="metodologia-agil">
+                    <h3>📊 Enfoque de Desarrollo - Metodología Ágil</h3>
+                    <p>Implementaremos una metodología ágil adaptada, con sprints semanales y entregables concretos cada
+                        semana, gestionado a través de un <strong>tablero Kanban</strong> para organización transparente
+                        de
+                        tareas. Esto permite:</p>
+                    <ul>
+                        <li>Feedback continuo y ajustes rápidos</li>
+                        <li>Validación temprana de funcionalidades críticas</li>
+                        <li>Transparencia total en el progreso y estado de tareas</li>
+                        <li>Reducción de riesgos técnicos</li>
+                        <li>Visibilidad completa del workflow para el cliente</li>
+                    </ul>
+                </div>
+
+                <!-- SPRINTS ESTIMADOS -->
+                <div class="sprint-estimados">
+                    <h3>⏱️ Estimación de Sprints (A definir con el cliente)</h3>
+                    <div class="sprint-timeline">
+                        <div class="sprint-item">
+                            <div class="sprint-header">Sprint 1-2: Fundación Técnica (Semanas 1-2)</div>
+                            <p>Setup completo del proyecto, arquitectura base, autenticación, y estructura de base de
+                                datos.
+                                Al final de estas 2 semanas, tendremos una aplicación base funcional con login/registro.
+                            </p>
+                        </div>
+
+                        <div class="sprint-item">
+                            <div class="sprint-header">Sprint 3-4: Chat Conversacional (Semanas 3-4)</div>
+                            <p>Implementación del sistema de chat en tiempo real e integración con OpenAI. El usuario
+                                podrá
+                                mantener conversaciones fluidas con el asistente virtual.</p>
+                        </div>
+
+                        <div class="sprint-item">
+                            <div class="sprint-header">Sprint 5-6: Onboarding + Núcleo Estratégico (Semanas 5-6)</div>
+                            <p>Desarrollo del flow de onboarding conversacional y construcción automática del núcleo
+                                estratégico del negocio del usuario.</p>
+                        </div>
+
+                        <div class="sprint-item">
+                            <div class="sprint-header">Sprint 7-8: Motor de Oportunidades (Semanas 7-8)</div>
+                            <p>Implementación del algoritmo que genera oportunidades de marketing basadas en el núcleo
+                                estratégico del usuario.</p>
+                        </div>
+
+                        <div class="sprint-item">
+                            <div class="sprint-header">Sprint 9-10: Integraciones n8n (Semanas 9-10)</div>
+                            <p>Setup de n8n y desarrollo de las primeras integraciones externas (Trello, Email). El
+                                usuario
+                                podrá ejecutar tareas directamente en sus herramientas.</p>
+                        </div>
+
+                        <div class="sprint-item">
+                            <div class="sprint-header">Sprint 11-12: Asistente Contextual + Pulido (Semanas 11-12)</div>
+                            <p>Desarrollo del asistente que ayuda a ejecutar tareas específicas, testing completo,
+                                optimizaciones y deploy final.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nota-importante-sprints">
+                    <h4>📝 Nota Importante sobre Sprints</h4>
+                    <div class="key-point">
+                        <p>Esta estimación de sprints es preliminar y será refinada durante las reuniones de planning
+                            con el
+                            cliente. Cada sprint será ajustado según:</p>
+                        <ul>
+                            <li>Feedback y prioridades del cliente</li>
+                            <li>Complejidad real encontrada durante el desarrollo</li>
+                            <li>Nuevos requirements que puedan surgir</li>
+                            <li>Oportunidades de optimización identificadas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PROPUESTA ECONÓMICA -->
+                <div class="propuesta-economica">
+                    <h3>💰 Propuesta Económica</h3>
+
+                    <div class="pricing-box">
+                        <h3>Modelo de Trabajo Propuesto</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 20px 0;">
+                            <div>
+                                <h4>⏰ Dedicación Diaria</h4>
+                                <div class="pricing-amount" style="font-size: 1.8em;">6 horas</div>
+                                <p>Por desarrollador por día</p>
+                            </div>
+                            <div>
+                                <h4>📅 Duración</h4>
+                                <div class="pricing-amount" style="font-size: 1.8em;">90 días</div>
+                                <p>3 meses de desarrollo</p>
+                            </div>
+                            <div>
+                                <h4>👥 Equipo</h4>
+                                <div class="pricing-amount" style="font-size: 1.8em;">1 Equipo</div>
+                                <p>2 Desarrolladores Senior</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-box">
+                    <h3>💵 Inversión Total del Proyecto</h3>
+                    <div style="text-align: left; margin: 20px 0;">
+                        <p><strong>Cálculo de Desarrollo:</strong></p>
+                        <p>• 6 horas/día × 90 días × 1 equipo = <strong>540 horas totales</strong></p>
+                        <p>• 540 horas × $20 USD/hora = <strong>$10,800 USD</strong></p>
+
+                        <p style="margin-top: 15px;"><strong>Infraestructura:</strong></p>
+                        <p>• <span style="color: #28a745;">🆓 Capa Free (POC):</span> <strong>$0 USD</strong> (Vercel +
+                            MongoDB gratuito)</p>
+
+                        <p style="margin-top: 10px;"><strong>OpenAI API:</strong></p>
+                        <p>• <span style="color: #ffc107;">⚠️ No tiene capa gratuita permanente</span></p>
+                        <p>• <span style="color: #28a745;">🆓 Créditos iniciales:</span> $5-18 USD (para testing
+                            inicial)</p>
+                        <p>• <span style="color: #dc3545;">💰 Plan de pago:</span> <strong>~$50-150 USD/mes</strong>
+                            para POC</p>
+                        <p style="font-size: 0.9em; color: #6c757d; margin-left: 20px;">
+                            - GPT-3.5-turbo: $0.002/1K tokens<br>
+                            - GPT-4: $0.03/1K tokens (recomendado)
+                        </p>
+
+                        <p style="margin-top: 15px;"><strong>Costos Producción (si escala):</strong></p>
+                        <p>• <span style="color: #dc3545;">💰 Infraestructura:</span> <strong>~$50-100 USD/mes</strong>
+                        </p>
+                        <p>• <span style="color: #dc3545;">💰 OpenAI API (escala):</span> <strong>~$200-500
+                                USD/mes</strong></p>
+                        <p style="font-size: 0.9em; color: #6c757d; margin-left: 20px;">
+                            - Hostinger: ~$30/mes<br>
+                            - MongoDB Atlas: ~$20-40/mes<br>
+                            - SSL + Dominio: ~$15/año<br>
+                            - OpenAI (alto volumen): ~$200-500/mes
+                        </p>
+                        <p style="margin-top: 10px;"><strong style="color: #dc3545;">Total Producción: ~$250-600
+                                USD/mes</strong></p>
+                    </div>
+                    <div style="margin: 20px 0;">
+                        <div class="pricing-amount">$10,800 USD</div>
+                        <p style="color: #28a745; font-weight: 600;">*POC con infraestructura gratuita incluida</p>
+                        <p style="color: #6c757d; font-size: 0.9em; margin-top: 5px;">
+                            + Costos de producción solo cuando la app escale
+                        </p>
+                    </div>
+                </div>
+                <div class="pagos-flexibles">
+                    <h3>📋 Modalidades de Pago Flexibles</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="highlight-box">
+                            <h4>Opción A: Mensual</h4>
+                            <ul>
+                                <li>3 pagos de $3,600 USD.</li>
+                                <li>El primer pago se realiza al inicio del proyecto.</li>
+                                <li>y el resto de los pagos se realizan al final de cada mes.</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>Opción B: Por Hitos</h4>
+                            <ul>
+                                <li>30% al inicio: $3,240 USD.</li>
+                                <li>50% a mitad: $5,400 USD.</li>
+                                <li>20% al final: $2,160 USD.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="nuestra-propuesta">
+                    <h3>✅ Qué Incluye Nuestra Propuesta</h3>
+                    <div class="key-point">
+                        <ul>
+                            <li><strong>Desarrollo completo:</strong> Aplicación web funcional end-to-end.</li>
+                            <li><strong>Integración IA:</strong> Chat conversacional con OpenAI optimizado para
+                                marketing.
+                            </li>
+                            <li><strong>Automatizaciones:</strong> n8n workflows (ítem a definir con cliente)</li>
+                            <li><strong>Deploy:</strong> Aplicación desplegada y funcional en producción.</li>
+                            <li><strong>Documentación:</strong> Técnica completa + manual de usuario.</li>
+                            <li><strong>Testing completo:</strong> Testing manual exhaustivo.</li>
+                            <li><strong>Soporte:</strong> 2 semanas post-entrega incluidas.</li>
+                            <li><strong>Código fuente:</strong> 100% propiedad del cliente.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="compromisos-calidad">
+                    <h3>🎯 Compromisos de Calidad</h3>
+                    <div class="key-point">
+                        <ul>
+                            <li><strong>Comunicación semanal:</strong> Reuniones de seguimiento y reportes de progreso.
+                            </li>
+                            <li><strong>Entregables incrementales:</strong> Demos funcionales cada sprint.</li>
+                            <li><strong>Código escalable:</strong> Arquitectura preparada para crecimiento post-POC.
+                            </li>
+                            <li><strong>Documentación completa:</strong> Para facilitar mantenimiento futuro.</li>
+                            <li><strong>Transparencia total:</strong> Acceso completo al repositorio y progreso.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p><strong>IgnovaTech</strong> - Transformando ideas en soluciones tecnológicas reales</p>
+        <p style="opacity: 0.8; margin-top: 10px;">Buenos Aires, Argentina • cajs0718@gmail.com</p>
+    </div>
+</body>
+
+</html>
