@@ -20,14 +20,74 @@ body {
     text-align: center;
     margin-bottom: 20px;
     position: relative;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
 }
 
 .header h1 {
-    font-size: 3em;
+    font-size: clamp(2em, 5vw, 3em);
     font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: -1px;
     position: relative;
+}
+
+.header-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 120px;
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    z-index: 5;
+}
+
+.header-content h1 {
+    margin: 0;
+}
+
+.header-content .subtitle {
+    margin: 0;
+    font-size: clamp(1em, 3vw, 1.3em);
+    opacity: 0.9;
+}
+
+.download-btn {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 12px 20px;
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 152, 0, 0.3);
+    font-size: 14px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #f57c00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+}
+
+.btn-text-mobile {
+    display: none;
 }
 
 .logo {
@@ -69,11 +129,7 @@ body {
     }
 }
 
-.header .subtitle {
-    font-size: 1.2em;
-    opacity: 0.9;
-    font-weight: 400;
-}
+/* Eliminado - ahora está en .header-content .subtitle */
 
 .container {
     max-width: 800px;
@@ -336,37 +392,113 @@ li {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* Tablet Grande (1024px - 768px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .tech-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+/* Tablet (768px - 481px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .header {
+        padding: 50px 0 30px 0;
+        min-height: 120px;
+    }
+
+    .header-logo {
+        height: 80px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .download-btn {
+        top: 15px;
+        right: 15px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tech-list {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+    }
+
+    .company-info {
+        padding: 25px;
+        margin: 30px 0;
+    }
+
+    .section {
+        margin: 25px 0;
+    }
+
+    .pricing-box>div[style*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .sprint-item {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+}
+
+/* Móvil Grande (480px - 361px) */
+@media (max-width: 480px) and (min-width: 361px) {
     .container {
         padding: 0 15px;
     }
 
     .header {
-        padding: 60px 0 30px 0;
-        position: relative;
+        padding: 45px 0 25px 0;
+        min-height: 100px;
     }
 
-    .header h1 {
-        font-size: 2em;
-        margin-bottom: 8px;
+    .header-logo {
+        height: 60px;
+        top: 12px;
+        left: 12px;
     }
 
-    .header .subtitle {
-        font-size: 1em;
+    .download-btn {
+        top: 12px;
+        right: 12px;
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
-    /* Ajustes para logo y botón en móvil */
-    .header img {
-        height: 60px !important;
-        top: 10px !important;
-        left: 10px !important;
+    .btn-text {
+        display: none;
     }
 
-    .header button {
-        top: 10px !important;
-        right: 10px !important;
-        padding: 8px 12px !important;
-        font-size: 12px !important;
+    .btn-text-mobile {
+        display: inline;
     }
 
     .info-grid {
@@ -381,7 +513,7 @@ li {
 
     .company-info {
         padding: 20px;
-        margin: 20px 0;
+        margin: 25px 0;
     }
 
     .section {
@@ -389,25 +521,16 @@ li {
     }
 
     .section h2 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 
     .section h3 {
-        font-size: 1.2em;
-    }
-
-    .arquitectura-tecnica {
-        margin: 20px 0 !important;
+        font-size: 1.1em;
     }
 
     .pricing-box {
         padding: 20px;
         margin: 20px 0;
-    }
-
-    .pricing-box>div[style*="grid"] {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
     }
 
     .pricing-amount {
@@ -427,53 +550,72 @@ li {
         padding: 15px;
         margin: 10px 0;
     }
-
-    /* Modalidades de pago en columna */
-    div[style*="grid-template-columns: 1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-    }
 }
 
-@media (max-width: 480px) {
-    .header {
-        padding: 50px 0 25px 0;
-    }
-
-    .header h1 {
-        font-size: 1.8em;
-    }
-
-    .header img {
-        height: 50px !important;
-    }
-
+/* Móvil Pequeño (≤ 360px) */
+@media (max-width: 360px) {
     .container {
-        padding: 0 10px;
+        padding: 0 12px;
+    }
+
+    .header {
+        padding: 40px 0 20px 0;
+        min-height: 90px;
+    }
+
+    .header-logo {
+        height: 50px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .download-btn {
+        top: 10px;
+        right: 10px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .btn-text {
+        display: none;
+    }
+
+    .btn-text-mobile {
+        display: inline;
     }
 
     .company-info {
         padding: 15px;
+        margin: 20px 0;
     }
 
     .info-item {
         padding: 15px;
     }
 
+    .section {
+        margin: 15px 0;
+    }
+
     .section h2 {
-        font-size: 1.3em;
+        font-size: 1.2em;
+    }
+
+    .section h3 {
+        font-size: 1em;
     }
 
     .pricing-box {
         padding: 15px;
+        margin: 15px 0;
     }
 
     .pricing-amount {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     .tech-stack {
-        padding: 15px;
+        padding: 12px;
     }
 
     .sprint-timeline {
@@ -481,23 +623,38 @@ li {
     }
 
     .sprint-item {
-        padding: 10px;
+        padding: 12px;
+        margin: 8px 0;
     }
 
     .highlight-box {
-        padding: 10px;
+        padding: 12px;
+        margin: 12px 0;
     }
 
     .key-point {
-        padding: 10px;
+        padding: 12px;
+        margin: 12px 0;
     }
 
     ul {
         padding-left: 15px;
+        margin: 10px 0;
     }
 
     li {
-        margin: 5px 0;
+        margin: 4px 0;
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    .tech-list {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .tech-item {
+        padding: 8px 12px;
         font-size: 0.9em;
     }
 }

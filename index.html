@@ -15,22 +15,20 @@
     <div class="header">
         <div class="container">
             <!-- Logo en extremo izquierdo -->
-            <img src="logo.png" alt="Logo IgnovaTech"
-                 style="position: absolute; top: 20px; left: 20px; height: 120px; width: auto; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.2);">
+            <img src="logo.png" alt="Logo IgnovaTech" class="header-logo">
 
             <!-- Contenedor centrado para título y subtítulo -->
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+            <div class="header-content">
                 <!-- Título centrado -->
-                <h1 style="margin: 0; font-size: 2.2em;"><span class="logo">IgnovaTech</span></h1>
+                <h1><span class="logo">IgnovaTech</span></h1>
                 <!-- Subtítulo centrado -->
-                <p class="subtitle" style="margin: 0; font-size: 1.3em; opacity: 0.9;">Soluciones Tecnológicas
-                    Innovadoras</p>
+                <p class="subtitle">Soluciones Tecnológicas Innovadoras</p>
             </div>
 
             <!-- Botón posicionado absolutamente en la esquina superior derecha -->
-            <button onclick="downloadPDF()"
-                    style="position: absolute; top: 60px; right: 20px; padding: 12px 20px; background: #ff9800; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 10px rgba(255,152,0,0.3); font-size: 14px;">
-                Descargar PDF
+            <button onclick="downloadPDF()" class="download-btn">
+                <span class="btn-text">Descargar PDF</span>
+                <span class="btn-text-mobile">PDF</span>
             </button>
         </div>
     </div>
